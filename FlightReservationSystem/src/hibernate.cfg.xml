@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- JDBC Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/flight_database?useSSL=false</property>
+        <property name="connection.username">santosh</property>
+        <property name="connection.password">santosh</property>
+
+        <!-- JDBC connection pool settings ... using built-in test pool -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- Select our SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Echo the SQL to stdout -->
+        <property name="show_sql">true</property>
+
+		<!-- Set the current session context -->
+		<property name="current_session_context_class">thread</property>
+		
+		<mapping class="com.flight.entity.AddressEntity"/>
+		<mapping class="com.flight.entity.PersonEntity"/>
+		<mapping class="com.flight.entity.PassengerEntity"/>
+		<mapping class="com.flight.entity.CustomerEntity"/>
+		<mapping class="com.flight.entity.TransportationEntity"/>
+		<mapping class="com.flight.entity.SelectedTransportEntity"/>
+		<mapping class="com.flight.entity.ReservationEntity"/>
+		<mapping class="com.flight.entity.FlightDetailsEntity"/>
+		
+ 
+    </session-factory>
+
+</hibernate-configuration>
